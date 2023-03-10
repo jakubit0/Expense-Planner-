@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -43,12 +44,19 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Expense Planner'),
       ),
       body: Column(
-         children: const [
-           Card(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+         children:  [
+          Container(
+            width: double.infinity,
+            child: const Card(
+            color: Colors.blue,
             elevation: 5,
             child: Text('CHART'),
           ),
-          Card(
+          ),
+          const Card(
+            color: Colors.red,
             child: Text('LIST OF TXT'),
           )
         ],       
