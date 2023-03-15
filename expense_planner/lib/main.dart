@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'transaction.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -101,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontWeight: FontWeight.bold,
                           ),),
                           Text(
-                            tx.date.toString(),
+                            DateFormat().format(tx.date),
                             style: const TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
