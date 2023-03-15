@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontWeight: FontWeight.bold,
                           ),),
                           Text(
-                            DateFormat().format(tx.date),
+                            DateFormat.yMMMEd().format(tx.date),
                             style: const TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
