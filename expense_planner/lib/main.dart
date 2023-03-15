@@ -72,6 +72,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Row(
                   children: [
                       Container(
+                        margin: const EdgeInsets.symmetric(
+                          vertical: 10, 
+                          horizontal: 15),
                         child: Text(tx.amount.toString()
                         ),
                       ),
