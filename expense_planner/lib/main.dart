@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -35,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   
-  final titileController = TextEditingController();
+  final titleController = TextEditingController();
   final amountController = TextEditingController();
 
   @override
@@ -45,9 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Expense Planner'),
       ),
       body: Column(
-        //mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-    
         children: [
           Container(
             width: double.infinity,
@@ -57,34 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('CHART'),
             ),
           ),
-          Card(
-            elevation: 5,
-            child: Container(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  TextField(
-                    decoration: const InputDecoration(labelText: 'Title'),
-                    controller: titileController,
-                  ),
-                  TextField(
-                    decoration: const InputDecoration(labelText: 'Amount'),
-                    controller: amountController,
-                  ),
-                  const SizedBox(height: 10),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.purple),
-                    ),
-                    onPressed: () {},
-                    child: const Text('Add Transaction'),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          
+         
         ],
       ),
     );
