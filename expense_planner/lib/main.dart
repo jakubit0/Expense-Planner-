@@ -48,8 +48,9 @@ class _MyHomePageState extends State<MyHomePage> {
       date: DateTime.now(),
     ),
   ];
-  String? titleInput;
-  String? amountInput;
+
+  final titileController = TextEditingController();
+  final amountController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -77,24 +78,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   TextField(
-                    decoration: InputDecoration(labelText: 'Title'),
-                    onChanged: (val) {
-                      titleInput = val;
-                    },
+                    decoration:  const InputDecoration(labelText: 'Title'),
+                  controller: titileController,
                   ),
                   TextField(
-                    decoration: InputDecoration(labelText: 'Amount'),
-                    onChanged: (val) => amountInput = val,
+                    decoration: const InputDecoration(labelText: 'Amount'),
+                    controller: amountController,
                   ),
                   const SizedBox(height: 10),
-                  ElevatedButton(
-                    child: Text('Add Transaction'),
+                  ElevatedButton(           
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.purple),
                     ),
                     onPressed: () {
-                    
+                      
                     },
+                     child: const Text('Add Transaction'),
                   ),
                 ],
               ),
