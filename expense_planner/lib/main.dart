@@ -48,6 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
       date: DateTime.now(),
     ),
   ];
+  String? titleInput;
+  String? amountInput;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Expense Planner'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
@@ -65,6 +67,37 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.blue,
               elevation: 5,
               child: Text('CHART'),
+            ),
+          ),
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Title'),
+                    onChanged: (val) {
+                      titleInput = val;
+                    },
+                  ),
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Amount'),
+                    onChanged: (val) => amountInput = val,
+                  ),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    child: Text('Add Transaction'),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.purple),
+                    ),
+                    onPressed: () {
+                    
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
           Column(
