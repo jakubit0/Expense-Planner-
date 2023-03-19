@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'transaction.dart';
 import 'package:intl/intl.dart';
+import './models/transaction.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,21 +34,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<Transaction> transaction = [
-    Transaction(
-      id: 't1',
-      title: 'New shoes',
-      amount: 69.99,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Weekly Groceries',
-      amount: 16.53,
-      date: DateTime.now(),
-    ),
-  ];
-
+  
   final titileController = TextEditingController();
   final amountController = TextEditingController();
 
@@ -78,22 +64,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   TextField(
-                    decoration:  const InputDecoration(labelText: 'Title'),
-                  controller: titileController,
+                    decoration: const InputDecoration(labelText: 'Title'),
+                    controller: titileController,
                   ),
                   TextField(
                     decoration: const InputDecoration(labelText: 'Amount'),
                     controller: amountController,
                   ),
                   const SizedBox(height: 10),
-                  ElevatedButton(           
+                  ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.purple),
                     ),
-                    onPressed: () {
-                      
-                    },
-                     child: const Text('Add Transaction'),
+                    onPressed: () {},
+                    child: const Text('Add Transaction'),
                   ),
                 ],
               ),
