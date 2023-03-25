@@ -1,6 +1,5 @@
 import 'package:expense_planner/widgets/user_transactions.dart';
 import 'package:flutter/material.dart';
-import './widgets/user_transactions.dart';
 
 void main() {
   runApp(const MyApp());
