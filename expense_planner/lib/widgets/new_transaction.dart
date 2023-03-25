@@ -16,7 +16,7 @@ class NewTransaction extends StatelessWidget {
     if (enteredTtile.isEmpty || enteredAmount <= 0) {
       return;
     }
-    
+
     addTx(
       enteredTtile, 
       enteredAmount
@@ -35,13 +35,13 @@ class NewTransaction extends StatelessWidget {
             TextField(
               decoration: const InputDecoration(labelText: 'Title'),
               controller: titleController,
-              onSubmitted: (_) => submitData,
+              onSubmitted: (_) => submitData(),
             ),
             TextField(
               decoration: const InputDecoration(labelText: 'Amount'),
               controller: amountController,
               keyboardType: TextInputType.number,
-              onSubmitted: (_) => submitData,
+              onSubmitted: (_) => submitData(),
             ),
             const SizedBox(height: 10),
             ElevatedButton(
